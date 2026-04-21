@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SkillPost, Review
+from .models import SkillPost, Review, Appointment
 
 
 @admin.register(SkillPost)
@@ -10,6 +10,14 @@ class SkillPostAdmin(admin.ModelAdmin):
     list_editable = ['is_active']
     readonly_fields = ['created_at', 'updated_at']
     ordering = ['-created_at']
+
+
+@admin.register(Appointment)
+class AppointmentAdmin(admin.ModelAdmin):
+    list_display = ['requester', 'skill_post', 'date', 'time', 'created_at']
+    list_filter = ['date']
+    search_fields = ['requester__username', 'skill_post__title']
+    readonly_fields = ['created_at']
 
 
 @admin.register(Review)

@@ -1,7 +1,8 @@
+import datetime
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import SkillPost, Review
+from .models import SkillPost, Review, Appointment
 
 
 class RegisterForm(UserCreationForm):
@@ -39,6 +40,26 @@ class SkillPostForm(forms.ModelForm):
             'rate': 'e.g. Free, $15/hr, Trade for coffee',
             'contact': 'Email, phone, or how to reach you',
         }
+
+
+class AppointmentForm(forms.ModelForm):
+    class Meta:
+        model = Appointment
+        fields = ['date', 'time', 'message']
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date'}),
+            'time': forms.TimeInput(attrs={'type': 'time'}),
+            'message': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Any details for the skill provider? (optional)'}),
+        }
+        labels = {
+            'message': 'Note (optional)',
+        }
+
+    def clean_date(self):
+        date = self.cleaned_data['date']
+        if date < datetime.date.today():
+            raise forms.ValidationError("Please choose a date in the future.")
+        return date
 
 
 class ReviewForm(forms.ModelForm):

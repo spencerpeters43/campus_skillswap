@@ -70,6 +70,41 @@
       </div>
     </div>
 
+    <!-- Book an Appointment -->
+    {% if can_book %}
+    <div class="card border-0 shadow-sm mt-4">
+      <div class="card-body p-4">
+        <h5 class="fw-bold mb-1"><i class="bi bi-calendar-plus me-2 text-primary"></i>Request an Appointment</h5>
+        <p class="text-muted small mb-3">Pick a date and time and send a request to {{ post.author.first_name|default:post.author.username }}.</p>
+        <form method="post" action="{% url 'book_appointment' post.pk %}">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="id_date" class="form-label fw-semibold">Date</label>
+              <input type="date" name="date" id="id_date" class="form-control" required>
+            </div>
+            <div class="col-sm-6">
+              <label for="id_time" class="form-label fw-semibold">Time</label>
+              <input type="time" name="time" id="id_time" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <label for="id_message" class="form-label fw-semibold">Note <span class="text-muted fw-normal">(optional)</span></label>
+              <textarea name="message" id="id_message" class="form-control" rows="2" placeholder="Any details for the skill provider?"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-brand fw-semibold px-4 mt-3">
+            <i class="bi bi-send me-1"></i>Send Request
+          </button>
+        </form>
+      </div>
+    </div>
+    {% elif not user.is_authenticated %}
+    <div class="alert border-0 shadow-sm bg-primary bg-opacity-10 text-primary mt-4">
+      <i class="bi bi-calendar me-1"></i>
+      <a href="{% url 'login' %}" class="text-primary fw-semibold">Log in</a> to request an appointment.
+    </div>
+    {% endif %}
+
     <!-- Reviews Section -->
     <div class="mt-4">
       <h5 class="fw-bold mb-3">Reviews</h5>

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}Appointments — Campus SkillSwap{% endblock %}
+
+{% block content %}
+
+<div class="hero-section mb-4">
+  <h2 class="fw-bold mb-1">Appointments</h2>
+  <p class="mb-0 opacity-75">Manage your upcoming sessions.</p>
+</div>
+
+<div class="row g-4">
+
+  <!-- My bookings -->
+  <div class="col-lg-6">
+    <h5 class="fw-bold mb-3">
+      <i class="bi bi-calendar-check me-2 text-primary"></i>My Bookings
+    </h5>
+
+    {% if my_bookings %}
+      {% for appt in my_bookings %}
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="fw-semibold mb-1">
+                <a href="{% url 'skill_detail' appt.skill_post.pk %}" class="text-decoration-none text-dark">
+                  {{ appt.skill_post.title }}
+                </a>
+              </h6>
+              <small class="text-muted">
+                with {{ appt.skill_post.author.get_full_name|default:appt.skill_post.author.username }}
+              </small>
+            </div>
+            <div class="text-end">
+              <div class="fw-semibold text-primary">{{ appt.date|date:"M j, Y" }}</div>
+              <small class="text-muted">{{ appt.time|time:"g:i A" }}</small>
+            </div>
+          </div>
+          {% if appt.message %}
+          <p class="text-muted small mt-2 mb-0 border-top pt-2">{{ appt.message }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="text-center py-4 text-muted">
+      <i class="bi bi-calendar display-6 d-block mb-2"></i>
+      No bookings yet. <a href="{% url 'home' %}">Browse skills</a> to get started.
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Incoming requests -->
+  <div class="col-lg-6">
+    <h5 class="fw-bold mb-3">
+      <i class="bi bi-calendar-plus me-2 text-warning"></i>Requests for My Skills
+    </h5>
+
+    {% if incoming %}
+      {% for appt in incoming %}
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="fw-semibold mb-1">{{ appt.skill_post.title }}</h6>
+              <small class="text-muted">
+                from {{ appt.requester.get_full_name|default:appt.requester.username }}
+              </small>
+            </div>
+            <div class="text-end">
+              <div class="fw-semibold text-primary">{{ appt.date|date:"M j, Y" }}</div>
+              <small class="text-muted">{{ appt.time|time:"g:i A" }}</small>
+            </div>
+          </div>
+          {% if appt.message %}
+          <p class="text-muted small mt-2 mb-0 border-top pt-2">{{ appt.message }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="text-center py-4 text-muted">
+      <i class="bi bi-inbox display-6 d-block mb-2"></i>
+      No incoming requests yet.
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

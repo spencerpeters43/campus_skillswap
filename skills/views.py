@@ -3,8 +3,8 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q, Avg
-from .models import SkillPost, Review
-from .forms import RegisterForm, SkillPostForm, ReviewForm
+from .models import SkillPost, Review, Appointment
+from .forms import RegisterForm, SkillPostForm, ReviewForm, AppointmentForm
 
 
 def home(request):
@@ -38,9 +38,11 @@ def skill_detail(request, pk):
 
     user_review = None
     can_review = False
+    can_book = False
     if request.user.is_authenticated:
         user_review = reviews.filter(reviewer=request.user).first()
         can_review = (request.user != post.author) and (user_review is None)
+        can_book = request.user != post.author
 
     return render(request, 'skills/detail.html', {
         'post': post,
@@ -48,7 +50,9 @@ def skill_detail(request, pk):
         'avg_rating': avg_rating,
         'user_review': user_review,
         'can_review': can_review,
+        'can_book': can_book,
         'review_form': ReviewForm(),
+        'appointment_form': AppointmentForm(),
         'star_range': range(1, 6),
     })
 
@@ -75,6 +79,40 @@ def add_review(request, pk):
             messages.success(request, 'Your review has been posted!')
 
     return redirect('skill_detail', pk=pk)
+
+
+@login_required
+def book_appointment(request, pk):
+    post = get_object_or_404(SkillPost, pk=pk)
+
+    if request.user == post.author:
+        messages.error(request, "You can't book your own skill.")
+        return redirect('skill_detail', pk=pk)
+
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            appointment = form.save(commit=False)
+            appointment.skill_post = post
+            appointment.requester = request.user
+            appointment.save()
+            messages.success(request, f'Appointment requested for {appointment.date} at {appointment.time.strftime("%I:%M %p")}!')
+        else:
+            for field in form:
+                for error in field.errors:
+                    messages.error(request, error)
+
+    return redirect('skill_detail', pk=pk)
+
+
+@login_required
+def appointments(request):
+    my_bookings = Appointment.objects.filter(requester=request.user).select_related('skill_post', 'skill_post__author')
+    incoming = Appointment.objects.filter(skill_post__author=request.user).select_related('skill_post', 'requester')
+    return render(request, 'appointments.html', {
+        'my_bookings': my_bookings,
+        'incoming': incoming,
+    })
 
 
 def register(request):
