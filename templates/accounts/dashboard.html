@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}My Dashboard — Campus SkillSwap{% endblock %}
+
+{% block content %}
+
+<!-- Welcome banner -->
+<div class="hero-section mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h2 class="fw-bold mb-1">My Dashboard</h2>
+      <p class="mb-0 opacity-75">
+        Welcome back, {{ user.first_name|default:user.username }}!
+        You have {{ posts.count }} skill post{{ posts.count|pluralize }}.
+      </p>
+    </div>
+    <a href="{% url 'create_post' %}" class="btn btn-warning fw-semibold">
+      <i class="bi bi-plus-circle me-1"></i>New Post
+    </a>
+  </div>
+</div>
+
+{% if posts %}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for post in posts %}
+  <div class="col">
+    <div class="card h-100 border-0 shadow-sm {% if not post.is_active %}opacity-50{% endif %}">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary small">{{ post.get_category_display }}</span>
+          {% if post.is_active %}
+            <span class="badge rounded-pill bg-success bg-opacity-10 text-success small">Active</span>
+          {% else %}
+            <span class="badge rounded-pill bg-secondary bg-opacity-10 text-secondary small">Inactive</span>
+          {% endif %}
+        </div>
+        <h5 class="card-title fw-semibold">{{ post.title }}</h5>
+        <p class="card-text text-muted small">{{ post.description|truncatewords:15 }}</p>
+        <p class="mb-0">
+          <small class="text-success fw-semibold"><i class="bi bi-tag me-1"></i>{{ post.rate }}</small>
+        </p>
+      </div>
+      <div class="card-footer bg-transparent border-top-0 d-flex gap-2">
+        <a href="{% url 'skill_detail' post.pk %}" class="btn btn-outline-secondary btn-sm rounded-pill">View</a>
+        <a href="{% url 'edit_post' post.pk %}" class="btn btn-outline-primary btn-sm rounded-pill">Edit</a>
+        <a href="{% url 'delete_post' post.pk %}" class="btn btn-outline-danger btn-sm rounded-pill">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+  <div class="bg-white rounded-circle d-inline-flex p-4 mb-3 shadow-sm">
+    <i class="bi bi-clipboard-plus display-4 text-primary"></i>
+  </div>
+  <h5 class="fw-semibold">No skills posted yet</h5>
+  <p class="text-muted">Share what you know — someone out there needs it!</p>
+  <a href="{% url 'create_post' %}" class="btn btn-warning fw-semibold px-4">Post Your First Skill</a>
+</div>
+{% endif %}
+
+{% endblock %}

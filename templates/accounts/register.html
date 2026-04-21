@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up — Campus SkillSwap{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-5 col-md-7">
+
+    <div class="text-center mb-4">
+      <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-10 rounded-circle p-3 mb-3">
+        <i class="bi bi-people fs-3 text-warning"></i>
+      </div>
+      <h2 class="fw-bold">Join Campus SkillSwap</h2>
+      <p class="text-muted">Create an account to post and discover student skills.</p>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4">
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {% for field in form %}
+          <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label fw-semibold">
+              {{ field.label }}
+            </label>
+            {{ field }}
+            {% if field.help_text %}
+              <div class="form-text text-muted">{{ field.help_text }}</div>
+            {% endif %}
+            {% for error in field.errors %}
+              <div class="text-danger small mt-1">{{ error }}</div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+          <button type="submit" class="btn btn-warning w-100 fw-semibold mt-2">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <p class="text-center mt-3 text-muted small">
+      Already have an account? <a href="{% url 'login' %}">Log in</a>
+    </p>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('input').forEach(el => el.classList.add('form-control'));
+</script>
+{% endblock %}
