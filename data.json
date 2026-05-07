@@ -1,0 +1,638 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$YXo864wsYTs2Ba9NhZi6dl$JpujK2VtoJ10YMDxhAY8catX6wQE06d8EHuclnwTBsM=",
+    "last_login": "2026-04-21T19:36:02.631Z",
+    "is_superuser": true,
+    "username": "spencerpeters",
+    "first_name": "",
+    "last_name": "",
+    "email": "sp3ncer.peters@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-21T19:33:40.810Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$O4ZbvuN2t5qvCFz6LPfR2a$VuI4UeuIWvSpyEuqp4f82EtwxR1bVLj+cbPTElGZpZo=",
+    "last_login": "2026-04-21T19:38:16.350Z",
+    "is_superuser": false,
+    "username": "test_user",
+    "first_name": "Test",
+    "last_name": "User",
+    "email": "spencer.peters43@yahoo.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T19:38:16.052Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ApHTCHUDeZbtOPadj03ver$FLXNZAhJ5hXSkridoStep5kDcizT2GRhuXNlhfoSC9Y=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alice",
+    "first_name": "Alice",
+    "last_name": "Chen",
+    "email": "alice@university.edu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T22:30:49.817Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$mTlH9DIig13EnRmDB7g5AO$KgcUrIoOVoxgJ12uDa3qSQuez50fxuQWvWFQBXhsqq0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "bob",
+    "first_name": "Bob",
+    "last_name": "Martinez",
+    "email": "bob@university.edu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T22:30:50.065Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Bm9SLrkNXqV6yhCD8OAtz2$7tTil3Ubzokj7hL9NzVN3+42R25qznqFtrQNczXfQwc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "carlos",
+    "first_name": "Carlos",
+    "last_name": "Williams",
+    "email": "carlos@university.edu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T22:30:50.308Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Fx0gbKYqHEP5rVu2RHdjkR$kW8aoExXYxLCjeXZ/Ddnt+quP0iC0+kcSr275bPvCII=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "diana",
+    "first_name": "Diana",
+    "last_name": "Park",
+    "email": "diana@university.edu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T22:30:50.552Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$b8FsGBnqxZbLStYLK5v4QG$O44atAExGGdE4+TmEb1rhNkEVUTDrys4ot/CDP1CUFw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "emma",
+    "first_name": "Emma",
+    "last_name": "Johnson",
+    "email": "emma@university.edu",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-21T22:30:50.794Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "eefu2qxzr9j5m4bgqobhf7lbjvtlpr70",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlmO5S8lPWew1utdHECOFCdVxN1JpBTQvpl5m0iwLjWtneY0FnEVWlx-twz4onaA8oT2mCRObZnHLA9FnrTL-1TofTvdv4MKve619ZgjRIXGsVUaoZADx4b1Djz7QIpz0AYDDTbE7FB7FQwDFoQhZvH5AgBTONA:1wFGvI:eChQTiGcTnjKr4ovtQuPSMKe71aM1_EbZktkfZ-dee8",
+    "expire_date": "2026-05-05T19:38:16.350Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 1,
+  "fields": {
+    "author": [
+      "spencerpeters"
+    ],
+    "title": "Resistance Training Programming",
+    "description": "Will create a thorough resistance training program to fit your availability, top priorities, and training preferences.",
+    "category": "fitness",
+    "rate": "$20 single payment",
+    "contact": "sp3ncer.peters@gmail.com",
+    "is_active": true,
+    "created_at": "2026-04-21T19:37:34.623Z",
+    "updated_at": "2026-04-21T19:37:34.623Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 3,
+  "fields": {
+    "author": [
+      "alice"
+    ],
+    "title": "Python Programming Tutoring",
+    "description": "I can help you go from zero to confident in Python. We cover variables, loops, functions, and basic data structures at your own pace. Perfect for beginners or anyone who wants to strengthen their foundations.",
+    "category": "tech",
+    "rate": "$20/hr",
+    "contact": "alice@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.034Z",
+    "updated_at": "2026-04-21T22:30:51.034Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 4,
+  "fields": {
+    "author": [
+      "alice"
+    ],
+    "title": "Web Design Basics",
+    "description": "Learn the fundamentals of HTML, CSS, and Bootstrap. By the end of our sessions you will be able to build a clean, responsive webpage from scratch. No experience needed!",
+    "category": "design",
+    "rate": "Trade for coffee",
+    "contact": "alice@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.035Z",
+    "updated_at": "2026-04-21T22:30:51.035Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 5,
+  "fields": {
+    "author": [
+      "bob"
+    ],
+    "title": "Guitar Lessons for Beginners",
+    "description": "Acoustic or electric — I will teach you chords, strumming patterns, and your first songs. I have been playing for 8 years and love helping first-timers get hooked on music.",
+    "category": "music",
+    "rate": "$15/hr",
+    "contact": "bob@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.036Z",
+    "updated_at": "2026-04-21T22:30:51.036Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 6,
+  "fields": {
+    "author": [
+      "bob"
+    ],
+    "title": "Math Tutoring (Calc & Stats)",
+    "description": "Struggling with Calculus or Statistics? I got an A in both and can break down tricky concepts with clear examples. Exam prep is my specialty.",
+    "category": "academic",
+    "rate": "$18/hr",
+    "contact": "bob@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.037Z",
+    "updated_at": "2026-04-21T22:30:51.037Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 7,
+  "fields": {
+    "author": [
+      "carlos"
+    ],
+    "title": "Yoga & Meditation Sessions",
+    "description": "One-hour guided sessions covering breathwork, gentle yoga flows, and mindfulness techniques. Great for stress relief during exam season. All levels welcome.",
+    "category": "fitness",
+    "rate": "Free",
+    "contact": "carlos@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.037Z",
+    "updated_at": "2026-04-21T22:30:51.037Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 8,
+  "fields": {
+    "author": [
+      "carlos"
+    ],
+    "title": "Running Coach",
+    "description": "Training for a 5K or just want to build a consistent running habit? I will put together a personalised plan and run with you twice a week to keep you accountable.",
+    "category": "fitness",
+    "rate": "$10/session",
+    "contact": "carlos@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.038Z",
+    "updated_at": "2026-04-21T22:30:51.038Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 9,
+  "fields": {
+    "author": [
+      "diana"
+    ],
+    "title": "Homemade Pasta Workshop",
+    "description": "Come learn how to make fresh pasta from scratch — dough, shaping, and two sauces. We cook together in my campus apartment kitchen. Maximum 3 students per session.",
+    "category": "cooking",
+    "rate": "Trade for groceries",
+    "contact": "diana@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.039Z",
+    "updated_at": "2026-04-21T22:30:51.039Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 10,
+  "fields": {
+    "author": [
+      "diana"
+    ],
+    "title": "Korean Cooking Class",
+    "description": "Learn to make bibimbap, japchae, and kimchi pancakes in a fun, relaxed session. I grew up cooking these dishes and love sharing them. Ingredients provided.",
+    "category": "cooking",
+    "rate": "$12/session",
+    "contact": "diana@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.039Z",
+    "updated_at": "2026-04-21T22:30:51.039Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 11,
+  "fields": {
+    "author": [
+      "emma"
+    ],
+    "title": "Spanish Conversation Practice",
+    "description": "Native speaker offering relaxed conversation sessions to help you improve your fluency. Beginners and intermediate learners both welcome. We can meet at the campus café.",
+    "category": "language",
+    "rate": "Free",
+    "contact": "emma@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.040Z",
+    "updated_at": "2026-04-21T22:30:51.040Z"
+  }
+},
+{
+  "model": "skills.skillpost",
+  "pk": 12,
+  "fields": {
+    "author": [
+      "emma"
+    ],
+    "title": "Essay Writing & Editing",
+    "description": "I can help you plan, structure, and polish academic essays for any subject. I have tutored over 20 students and have a strong track record of grade improvements.",
+    "category": "language",
+    "rate": "$15/hr",
+    "contact": "emma@university.edu",
+    "is_active": true,
+    "created_at": "2026-04-21T22:30:51.041Z",
+    "updated_at": "2026-04-21T22:30:51.041Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 1,
+  "fields": {
+    "skill_post": 3,
+    "requester": [
+      "bob"
+    ],
+    "date": "2026-04-24",
+    "time": "14:00:00",
+    "message": "Looking forward to our first session! I have set up Python already.",
+    "created_at": "2026-04-21T22:30:51.048Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 2,
+  "fields": {
+    "skill_post": 3,
+    "requester": [
+      "carlos"
+    ],
+    "date": "2026-04-28",
+    "time": "10:00:00",
+    "message": "Can we focus on functions and classes this time?",
+    "created_at": "2026-04-21T22:30:51.049Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 3,
+  "fields": {
+    "skill_post": 5,
+    "requester": [
+      "alice"
+    ],
+    "date": "2026-04-26",
+    "time": "16:00:00",
+    "message": "Would love to start learning some basic chord progressions.",
+    "created_at": "2026-04-21T22:30:51.050Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 4,
+  "fields": {
+    "skill_post": 5,
+    "requester": [
+      "emma"
+    ],
+    "date": "2026-05-01",
+    "time": "11:00:00",
+    "message": "Hoping to learn a couple of campfire songs before the weekend trip!",
+    "created_at": "2026-04-21T22:30:51.050Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 5,
+  "fields": {
+    "skill_post": 6,
+    "requester": [
+      "alice"
+    ],
+    "date": "2026-04-25",
+    "time": "13:00:00",
+    "message": "Exam in two weeks — need help with integration techniques.",
+    "created_at": "2026-04-21T22:30:51.051Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 6,
+  "fields": {
+    "skill_post": 7,
+    "requester": [
+      "diana"
+    ],
+    "date": "2026-04-23",
+    "time": "09:00:00",
+    "message": "Really need this before my presentation next week. Thanks!",
+    "created_at": "2026-04-21T22:30:51.052Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 7,
+  "fields": {
+    "skill_post": 9,
+    "requester": [
+      "alice"
+    ],
+    "date": "2026-04-27",
+    "time": "15:00:00",
+    "message": "Bringing a friend too — hope that is okay!",
+    "created_at": "2026-04-21T22:30:51.052Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 8,
+  "fields": {
+    "skill_post": 11,
+    "requester": [
+      "carlos"
+    ],
+    "date": "2026-04-29",
+    "time": "17:00:00",
+    "message": "Mi español es muy básico but keen to improve.",
+    "created_at": "2026-04-21T22:30:51.053Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 9,
+  "fields": {
+    "skill_post": 12,
+    "requester": [
+      "bob"
+    ],
+    "date": "2026-04-22",
+    "time": "12:00:00",
+    "message": "Submitting a paper next Friday — would love feedback ASAP.",
+    "created_at": "2026-04-21T22:30:51.053Z"
+  }
+},
+{
+  "model": "skills.appointment",
+  "pk": 10,
+  "fields": {
+    "skill_post": 12,
+    "requester": [
+      "diana"
+    ],
+    "date": "2026-05-05",
+    "time": "10:30:00",
+    "message": "Working on a history essay, about 2000 words.",
+    "created_at": "2026-04-21T22:30:51.054Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 1,
+  "fields": {
+    "skill_post": 1,
+    "reviewer": [
+      "test_user"
+    ],
+    "rating": 5,
+    "comment": "Spencer was very helpful and tailored the programming to my exact needs",
+    "created_at": "2026-04-21T19:55:14.011Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 2,
+  "fields": {
+    "skill_post": 3,
+    "reviewer": [
+      "bob"
+    ],
+    "rating": 5,
+    "comment": "Alice is an amazing tutor! She explained list comprehensions in a way that finally clicked for me. Super patient and clear.",
+    "created_at": "2026-04-21T22:30:51.041Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 3,
+  "fields": {
+    "skill_post": 3,
+    "reviewer": [
+      "carlos"
+    ],
+    "rating": 4,
+    "comment": "Really helpful sessions. Covered a lot of ground quickly. Would recommend for anyone starting out with Python.",
+    "created_at": "2026-04-21T22:30:51.042Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 4,
+  "fields": {
+    "skill_post": 4,
+    "reviewer": [
+      "diana"
+    ],
+    "rating": 5,
+    "comment": "My portfolio site looks so much better now. Alice has a great eye for design and explains everything step by step.",
+    "created_at": "2026-04-21T22:30:51.042Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 5,
+  "fields": {
+    "skill_post": 5,
+    "reviewer": [
+      "alice"
+    ],
+    "rating": 5,
+    "comment": "Bob taught me my first three chords in one session. He is encouraging and adapts to your pace perfectly.",
+    "created_at": "2026-04-21T22:30:51.043Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 6,
+  "fields": {
+    "skill_post": 5,
+    "reviewer": [
+      "emma"
+    ],
+    "rating": 4,
+    "comment": "Great teacher! I had never touched a guitar before and left the first lesson actually playing something recognisable.",
+    "created_at": "2026-04-21T22:30:51.044Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 7,
+  "fields": {
+    "skill_post": 6,
+    "reviewer": [
+      "alice"
+    ],
+    "rating": 5,
+    "comment": "Passed my stats final thanks to Bob. He made hypothesis testing feel almost fun. Highly recommend.",
+    "created_at": "2026-04-21T22:30:51.044Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 8,
+  "fields": {
+    "skill_post": 7,
+    "reviewer": [
+      "diana"
+    ],
+    "rating": 5,
+    "comment": "Carlos's yoga sessions are exactly what I needed during finals week. Calm, structured, and genuinely relaxing.",
+    "created_at": "2026-04-21T22:30:51.045Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 9,
+  "fields": {
+    "skill_post": 7,
+    "reviewer": [
+      "emma"
+    ],
+    "rating": 4,
+    "comment": "Really enjoyed the breathwork focus. Left feeling refreshed. Will definitely book again.",
+    "created_at": "2026-04-21T22:30:51.045Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 10,
+  "fields": {
+    "skill_post": 9,
+    "reviewer": [
+      "alice"
+    ],
+    "rating": 5,
+    "comment": "The pasta workshop was so much fun! Diana is warm and knowledgeable. My cacio e pepe turned out perfectly.",
+    "created_at": "2026-04-21T22:30:51.046Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 11,
+  "fields": {
+    "skill_post": 9,
+    "reviewer": [
+      "bob"
+    ],
+    "rating": 4,
+    "comment": "Learned more in two hours than I expected. Diana makes cooking feel accessible. The kitchen was a great vibe.",
+    "created_at": "2026-04-21T22:30:51.046Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 12,
+  "fields": {
+    "skill_post": 11,
+    "reviewer": [
+      "carlos"
+    ],
+    "rating": 5,
+    "comment": "Emma is a natural at conversation teaching. No pressure, lots of laughs, and my confidence in speaking has grown a lot.",
+    "created_at": "2026-04-21T22:30:51.047Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 13,
+  "fields": {
+    "skill_post": 12,
+    "reviewer": [
+      "bob"
+    ],
+    "rating": 5,
+    "comment": "Emma turned a C-level essay into an A-. Her feedback was specific and actionable. Worth every penny.",
+    "created_at": "2026-04-21T22:30:51.047Z"
+  }
+},
+{
+  "model": "skills.review",
+  "pk": 14,
+  "fields": {
+    "skill_post": 12,
+    "reviewer": [
+      "diana"
+    ],
+    "rating": 4,
+    "comment": "Very thorough edits with clear explanations of why each change was made. My writing has improved noticeably.",
+    "created_at": "2026-04-21T22:30:51.048Z"
+  }
+}
+]
